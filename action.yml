@@ -1,0 +1,22 @@
+name: Extract JIRA issue keys
+
+author: k.jeong
+
+description: Extract JIRA issue keys from pull request commits
+
+inputs:
+  githubToken:
+    description: Github Token that has access to `repo`
+    required: true
+
+outputs:
+  issueKeys:
+    description: Extracted JIRA Issue Keys
+
+runs:
+  using: 'node16'
+  main: 'lib/index.js'
+
+branding:
+  icon: 'list'
+  color: 'purple'
