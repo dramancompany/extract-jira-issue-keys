@@ -18,7 +18,7 @@ export default async function getIssueKeys() {
   let page = 1;
   let issueKeys: string[] = [];
 
-  info(`${colors.white}⏳ Extracting issue keys from commits...`);
+  info(`${colors.white}⏳ 커밋 목록에서 이슈키 추출중...`);
 
   while (shouldFetchMore) {
     const res = await octokit.rest.pulls.listCommits({ ...payload, page });
@@ -36,7 +36,9 @@ export default async function getIssueKeys() {
   const uniqueIssueKeys = [...new Set(issueKeys)].sort();
 
   info(
-    `${colors.green}✅ Found ${uniqueIssueKeys.length} issue keys: ${uniqueIssueKeys.join(', ')}`,
+    `${colors.green}✅ ${uniqueIssueKeys.length}개의 이슈키를 찾았습니다!: ${uniqueIssueKeys.join(
+      ', ',
+    )}`,
   );
 
   return uniqueIssueKeys;

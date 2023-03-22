@@ -1,6 +1,6 @@
 {
   "name": "extract-jira-issue-keys",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Extract JIRA issue keys from PR commits",
   "main": "index.js",
   "scripts": {
